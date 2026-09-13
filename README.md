@@ -1,25 +1,25 @@
 # 정성욱
 
-Java / Spring 기반 백엔드 개발자를 목표로, 데이터 모델과 인증·조회 흐름을 실제 코드로 구현하며 프로젝트를 만들고 있습니다. 현재는 교통 알림 서비스 **StopBell**을 개발 중입니다.
+Java / Spring 기반 백엔드 개발자를 목표로 하고 있습니다.
+
+현재 Spring Boot 기반 교통 알림 서비스 [StopBell](https://github.com/jsw4795/stopbell)을 개발하고 있습니다. Google 로그인·토큰 인증과 버스 노선·정류장 저장·갱신을 구현했으며, 교통 API 연동과 알림 기능은 구현 전입니다.
 
 ## 대표 프로젝트
 
-### [StopBell](https://github.com/jsw4795/stopbell) · 진행 중
+### [Cabbage Market](https://github.com/jsw4795/Cabbage_Market) — 중고거래 서비스
 
-사용자가 교통 정보를 반복해서 확인하지 않도록 돕는 모바일 교통 알림 서비스입니다. V1은 버스 도착·통과 알림에 집중하며, Spring Boot 백엔드의 도메인·인증 기반을 먼저 구현하고 있습니다.
-`Java` `Spring Boot` `Spring Security` `JPA` `MyBatis` `MySQL` `Flutter`
+**6인 팀 프로젝트 · 담당: 채팅 기능, 팀원 코드 통합**
 
-### [Wine Manager](https://github.com/jsw4795/wine-manager) · 개인 프로젝트
+`Java` `Spring MVC` `MyBatis` `Oracle` `SSE`
 
-보유 와인의 구매·소비 기록과 리뷰를 관리하는 웹 서비스입니다. 사용자별 와인 데이터, 타임라인과 통계 조회, 환율 기반 가격 표시를 구현했습니다.
-`Java 17` `Spring Boot 3.2.3` `Spring Security` `MyBatis` `MySQL` `Thymeleaf`
+- **채팅 구현** — 게시글별 판매자·구매자 채팅방과 메시지·사진 전송을 구현했습니다. 메시지 전송은 HTTP/AJAX, 서버→클라이언트 이벤트 전달은 SSE로 구성했습니다.
+- **연결 관리** — 사용자별 `SseEmitter`를 관리하고, 연결 종료·타임아웃·전송 실패 시 emitter를 제거하도록 구현했습니다.
+- **재연결 처리** — 이벤트 ID와 최근 이벤트 캐시를 두고, `Last-Event-ID` 이후 이벤트 중 캐시에 남은 항목을 재전송하도록 구현했습니다.
+- **업로드 문제 해결** — 프로젝트 내부 리소스에 저장한 사진이 늦게 반영되던 문제를, 저장 경로를 프로젝트 외부로 분리해 개선했습니다.
 
-### [Cabbage Market](https://github.com/jsw4795/Cabbage_Market) · 6인 팀 프로젝트
+[채팅 시연과 구현 상세 보기 →](https://github.com/jsw4795/Cabbage_Market#채팅-기능)
 
-중고거래 서비스에서 채팅 기능과 코드 통합을 담당했습니다. 메시지 전송은 HTTP/AJAX, 서버에서의 실시간 이벤트 전달은 SSE로 구성했습니다.
-`Java 8` `Spring` `JSP` `MyBatis` `Oracle` `SSE`
+## 다른 프로젝트
 
-### [Music Station](https://github.com/jsw4795/Music_Station) · 4인 팀 프로젝트
-
-사용자 음원을 공유·스트리밍하는 서비스입니다. 음악 재생, 메인·TOP100, 로그인·회원가입과 코드 통합을 맡았고, 재생 로그 증가로 느려진 TOP100 조회를 개선했습니다.
-`Java 8` `Servlet` `JSP` `MyBatis` `Oracle`
+- **[Wine Manager](https://github.com/jsw4795/wine-manager)** — Spring Boot 기반 개인 와인 구매·소비 기록 서비스. 사용자별 타임라인과 재고 통계를 구현했습니다.
+- **[Music Station](https://github.com/jsw4795/Music_Station)** — 4인 팀 음악 공유 서비스. TOP100 조회 결과를 5분 주기로 메모리에 갱신해 응답에 재사용하도록 구현했습니다.
